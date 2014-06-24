@@ -1,0 +1,43 @@
+Prioritized
+0. disable-enable redownloads, fix.
+1. check installed-folder first when listing installs
+2. enable to add/delete from vimprc
+3. for vimprc-stuff, add symlink from vim/bundle/vimp
+4. when symlinking, make sure we don't overwrite any existing bundles
+5. if a depends on b and we delete b, then a can't work and we should
+   delete (or ask or notify) that a will not work any more.
+
+Misc
+- glob-extract is completely broken
+- implement gc
+- remove cached download after installing
+- use full package names everywhere, only use alias at the highest level
+
+Hooking into vim:
+- put vimprc in autoload, enable pathogen from here
+- put rest (if anything) in bundle/vimp
+
+Refactoring:
+- refactor the code in general
+- list of installs, check installed/ then check symlinks (faster, more robust)
+- create an archive.py for transparently working with various archives
+
+Packages to add
+- gundo
+- rainbow parenthesis
+
+Packages to consider
+- neocomplcache
+- syntastic
+- autoclose
+- better powerline colors for nerdtree
+- ack.vim
+- tagbar
+- see also vivify vim
+
+Problems
+- If you install powerline, then install syntastic or fugitive, you have to
+run ":PowerlineClearCache" for it to work. The same goes when uninstalling
+fugitive, have to clear that cache.  We need to add enable-hooks and
+disable-hooks so that disabling fugitive will also run
+":PowerlineClearCache" but only if powerline is installed.

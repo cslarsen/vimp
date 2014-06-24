@@ -1,0 +1,70 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+
+"""
+Vimp is a package manager for vim.
+
+Copyright (C) 2014 Christian Stigen Larsen
+Distributed under the LGPL v2.1; see LICENSE.txt
+"""
+
+import hashlib
+import os
+import pickle
+import shutil
+import sys
+import urllib2
+import zipfile
+
+from vimp.command import *
+from vimp.configure import configure
+from vimp.install import *
+from vimp.log import setverbose
+from vimp.scripts import (SCRIPTS, ALIASES, __version__ as SCRIPTS_VER)
+from vimp.util import touch
+
+def dispatch(commands):
+    """
+    Parses and executes commands.
+    """
+    if len(commands) == 0:
+        print_help()
+        sys.exit(0)
+
+    # Dispatch command to function
+    command = commands[0]
+    args = commands[1:]
+
+    try:
+        function = lookup_function(command)
+        function(*commands[1:])
+    except TypeError, e:
+        print("You supplied incorrect arguments to: %s" % command)
+        print(e)
+        print_help(command)
+        sys.exit(1)
+    except NotImplementedError:
+        print("Command not implemented: %s" % command)
+        sys.exit(1)
+
+def intercept_options(args):
+    out = []
+    for arg in args:
+        if arg.startswith("-"):
+            if arg == "-v":
+                setverbose(True)
+                continue
+            if arg == "-V" or arg == "--version":
+                print_version()
+                sys.exit(0)
+            if arg == "-h" or arg == "--help":
+                print_help()
+                sys.exit(0)
+        out.append(arg)
+    return out
+
+if __name__ == "__main__":
+    configure()
+    args = intercept_options(sys.argv[1:])
+    dispatch(args)
+    sys.exit(0)
