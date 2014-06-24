@@ -23,16 +23,25 @@ file before experimenting.  Using vimp should be quite safe at this time,
 but just in case you really don't want to mess with your setup, please
 backup.
 
+Finally, vimp does not recognize your existing plugins.  It *does* work fine
+side-by-side with existing plugins, but I haven't done much testing in this
+situation (a future version of vimp may be able to annex existing plugins,
+we'll see).
+
 More examples
 -------------
 
 Anyway, you can also specify several plugins to install.
-On a fresh vim-install, you can do this:
+On a *fresh* vim-install, you can do this:
 
-    $ vimp get molokai powerline ctrlp nerdtree fuzzyfinder
+    $ vimp get molokai powerline ctrlp signify nerdtree@ctrl-d \
+      undotree@ctrl-u snipmate
 
-This will download all the above packages and their dependencies *in
-parallel* and set them up with vim as Pathogen bundles.
+This will download all the plugins above and their dependencies, and will do
+so *in parallel*.  It will also map NerdTree to <C-d> and UndoTree to <C-u>.
+As this is a fresh vim install, it will install Pathogen also (note: it does
+*not* enable vim plugins for you, but this is something it probably
+should in a future version).
 
 In the above example, it will also change the current color scheme to
 Molokai.  To switch from Molokai to the grb256 color scheme, just type:
@@ -41,7 +50,7 @@ Molokai.  To switch from Molokai to the grb256 color scheme, just type:
 
 To disable a package, e.g. NERDTree, type
 
-    $ vimp disable nerdtree
+    $ vimp disable nerdtree@ctrl-d
 
 and to actually remove it from disk, use the `remove` command.  To list
 installed packages, type `vimp ls` and to list all available type `vimp ls
@@ -127,8 +136,8 @@ so I just symlink `~/bin/vimp` to `~/devel/vimp/vimp`:
 
 Later, when vimp is more mature, I'll make it possible to install via `pip`.
 
-Adding new scripts to vimp
---------------------------
+Adding new plugins / installations scripts to vimp
+--------------------------------------------------
 
 You can add new scripts to vimp by modifying `scripts.py`.  I won't explain
 in detail how to now, but just look at what's there already.
@@ -137,6 +146,17 @@ If you *do* add new scripts that work, please send a patch to me.
 
 To do
 -----
+
+There is a lot of stuff missing, and many corner cases that I don't handle.
+However, I don't consider it dangerous to use vimp.  In fact, I feel it's
+rather quite safe.
+
+Anyway, how much I will work on vimp depends on how many people can help me
+with patches.  Currently, it works pretty well for me.
+
+Most glaringly, I don't have support for updating whatsoever.
+
+List of various todos:
 
   * Add support for updating, upgrading
   * Do not leave behind dependencies when uninstalling
