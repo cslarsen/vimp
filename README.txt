@@ -12,9 +12,19 @@ disable the mapping on ctrl-u), type
 
     $ vimp disable undotree@ctrl-u
 
+Warning
+-------
 While vimp currently works fine, it should be considered pre-release alpha
 grade quality.  Meaning that I actively experiment with it, and may break
 stuff without notice at the current phase.
+
+Also, you may want to backup your entire `~/.vim` directory and `~/.vimrc`
+file before experimenting.  Using vimp should be quite safe at this time,
+but just in case you really don't want to mess with your setup, please
+backup.
+
+More examples
+-------------
 
 Anyway, you can also specify several plugins to install.
 On a fresh vim-install, you can do this:
@@ -111,9 +121,11 @@ I haven't made any installer yet, so you have to clone this project and add
 the vimp path to `$PATH`.  On my system, I've added `~/bin` to my `$PATH`,
 so I just symlink `~/bin/vimp` to `~/devel/vimp/vimp`:
 
-    $ cd ~/devel
     $ git clone https://github.com/cslarsen/vimp
-    $ ln -s ~/devel/vimp/vimp ~/bin
+    $ cd vimp
+    $ python setup.py install
+
+Later, when vimp is more mature, I'll make it possible to install via `pip`.
 
 Adding new scripts to vimp
 --------------------------
