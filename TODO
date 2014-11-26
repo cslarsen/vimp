@@ -1,4 +1,5 @@
 Prioritized
+a. Fix configure/SCRIPTS_VER to use tuple of ints, or else 0.1.10 < 0.1.2
 0. disable-enable redownloads, fix.
 1. check installed-folder first when listing installs
 2. enable to add/delete from vimprc
