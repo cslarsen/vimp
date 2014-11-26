@@ -7,7 +7,7 @@ Copyright (C) 2014 Christian Stigen Larsen
 Distributed under the LGPL v2.1; see LICENSE.txt
 """
 
-__version__ = "0.3.9"
+__version__ = "0.4.0"
 
 # Associates short script names with specific versions.
 ALIASES = {
@@ -27,6 +27,7 @@ ALIASES = {
   "snipmate": "snipmate-0.83",
   "surround": "surround-2.0",
   "syntastic": "syntastic-3.4.0",
+  "taglist": "taglist-4.6",
   "undotree": "undotree-4.3",
 }
 
@@ -54,6 +55,17 @@ SCRIPTS = {
                   ("doc/*", "{install}/doc"),
                   ("plugin/*", "{install}/plugin") ],
     "symlink":  [ ("{install}", "{bundle}") ],
+  },
+
+  "taglist-4.6": {
+    "author": "Yegappan Lakshmanan",
+    "about": "Source code browser",
+    "keywoeds": ["tag", "source", "browse", "c++", "python"],
+    "download": ("http://vim.sourceforge.net/scripts/download_script.php?src_id=19574",
+                 "{name}.zip"),
+    "extract": [ ("doc/taglist.txt", "{install}/doc/taglist.txt"),
+                 ("plugin/taglist.vim", "{install}/plugin/taglist.vim") ],
+    "symlink": [ ("{install}", "{bundle}") ],
   },
 
   "fuzzyfinder-4.2.2": {
