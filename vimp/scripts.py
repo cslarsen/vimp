@@ -7,7 +7,7 @@ Copyright (C) 2014 Christian Stigen Larsen
 Distributed under the LGPL v2.1; see LICENSE.txt
 """
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
 
 # Associates short script names with specific versions.
 ALIASES = {
@@ -313,6 +313,15 @@ let g:airline_symbols.linenr = '⭡'
     "deps": ["nerdtree"],
     "embed": [("{install}/plugin/nerdtree@ctrl-d/nerdtree@ctrl-d.vim",
                "nmap <silent> <C-D> :NERDTreeToggle{CR}")],
+    "symlink": [("{install}", "{bundle}")],
+  },
+
+  "taglist@ctrl-a": {
+    "author": "Christian Stigen Larsen",
+    "about": "Maps Taglist to <C-a>",
+    "deps": ["taglist"],
+    "embed": [("{install}/plugin/taglist@ctrl-a/taglist@ctrl-a.vim",
+               "nmap <silent> <C-a> :TlistToggle<Cr>")],
     "symlink": [("{install}", "{bundle}")],
   },
 
