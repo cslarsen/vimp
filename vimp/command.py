@@ -252,6 +252,7 @@ def list_installed(*args):
               sys.exit(1)
         else:
           list_details(arg)
+          return
 
     # List all scripts
     if FLAG_A:
