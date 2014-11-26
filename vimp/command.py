@@ -302,8 +302,11 @@ def search(name=None, *rest):
 
       def no_repeats(s):
         """Removes repeated characters in string."""
-        return s[0] + "".join(s[n] if s[n]!=s[n-1] else ""
-                              for n in xrange(1,len(s)))
+        if len(s) <= 1:
+            return s
+        else:
+            return s[0] + "".join(s[n] if s[n]!=s[n-1] else ""
+                                  for n in xrange(1,len(s)))
 
       def simplify(s):
         """Change q->k, w->v, z->s etc. to simplify comparison."""
