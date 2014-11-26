@@ -7,7 +7,7 @@ Copyright (C) 2014 Christian Stigen Larsen
 Distributed under the LGPL v2.1; see LICENSE.txt
 """
 
-__version__ = "0.4.2"
+__version__ = "0.4.3"
 
 # Associates short script names with specific versions.
 ALIASES = {
@@ -335,6 +335,14 @@ nmap <silent> <C-k> :tabclose<Cr>
 nmap <silent> <C-h> :tabprev<Cr>
 nmap <silent> <C-l> :tabnext<Cr>
 """)],
+    "symlink": [("{install}", "{bundle}")],
+  },
+
+  "forcequit@ctrl-x": {
+    "author": "Christian Stigen Larsen",
+    "about": "Maps :q! to <C-x>",
+    "embed": [("{install}/plugin/forcequit@ctrl-x/forcequit@ctrl-x.vim",
+               "nmap <silent> <C-x> :q!<Cr>")],
     "symlink": [("{install}", "{bundle}")],
   },
 
