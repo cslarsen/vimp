@@ -7,7 +7,7 @@ Copyright (C) 2014 Christian Stigen Larsen
 Distributed under the LGPL v2.1; see LICENSE.txt
 """
 
-__version__ = "0.4.1"
+__version__ = "0.4.2"
 
 # Associates short script names with specific versions.
 ALIASES = {
@@ -312,7 +312,7 @@ let g:airline_symbols.linenr = '⭡'
     "about": "Maps Nerdtree to <C-d>",
     "deps": ["nerdtree"],
     "embed": [("{install}/plugin/nerdtree@ctrl-d/nerdtree@ctrl-d.vim",
-               "nmap <silent> <C-D> :NERDTreeToggle{CR}")],
+               "nmap <silent> <C-d> :NERDTreeToggle<Cr>")],
     "symlink": [("{install}", "{bundle}")],
   },
 
@@ -322,6 +322,19 @@ let g:airline_symbols.linenr = '⭡'
     "deps": ["taglist"],
     "embed": [("{install}/plugin/taglist@ctrl-a/taglist@ctrl-a.vim",
                "nmap <silent> <C-a> :TlistToggle<Cr>")],
+    "symlink": [("{install}", "{bundle}")],
+  },
+
+  "tabs@ctrl-lhtk": {
+    "author": "Christian Stigen Larsen",
+    "about": "Maps tab open to <C-t>, close to <C-k>, switch to <C-h> and <C-l>",
+    "embed": [("{install}/plugin/tabs@ctrl-lhtk/tabs@ctrl-lhtk.vim",
+               """
+nmap <silent> <C-t> :tabnew<Cr>
+nmap <silent> <C-k> :tabclose<Cr>
+nmap <silent> <C-h> :tabprev<Cr>
+nmap <silent> <C-l> :tabnext<Cr>
+""")],
     "symlink": [("{install}", "{bundle}")],
   },
 
@@ -466,7 +479,7 @@ and of course `:help fugitive`.
     "deps": ["undotree"],
     "embed": [
       ("{install}/plugin/undotree@ctrl-u.vim",
-       ":map <silent> <C-u> :UndotreeToggle\r\r\n")
+       ":nmap <silent> <C-u> :UndotreeToggle<Cr>")
     ],
     "symlink": [ ("{install}", "{bundle}") ],
   },
