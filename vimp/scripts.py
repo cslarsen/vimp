@@ -382,7 +382,7 @@ nmap <silent> <C-l> :tabnext<Cr>
     "symlink": [("{install}", "{bundle}")],
   },
 
-  "leader@,": {
+  "leader@comma": {
     "author": "Christian Stigen Larsen",
     "about": "Maps <leader> to comma instead of default \\,",
     "embed": [("{install}/plugin/leader@comma.vim", 'let mapleader = ","')],
