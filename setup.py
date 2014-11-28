@@ -12,5 +12,5 @@ setup(
     license="LICENSE.txt",
     description="Command-line package manager or vim.",
     long_description=open("README.md").read(),
-    #install_requires=["dulwich"],
+    install_requires=["dulwich>=0.9.7"],
 )
