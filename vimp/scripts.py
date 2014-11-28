@@ -7,7 +7,7 @@ Copyright (C) 2014 Christian Stigen Larsen
 Distributed under the LGPL v2.1; see LICENSE.txt
 """
 
-__version__ = "0.4.6"
+__version__ = "0.4.7"
 
 # Associates short script names with specific versions.
 ALIASES = {
@@ -385,7 +385,7 @@ nmap <silent> <C-l> :tabnext<Cr>
   "leader@,": {
     "author": "Christian Stigen Larsen",
     "about": "Maps <leader> to comma instead of default \\,",
-    "embed": [("{install}/plugin/leader@,", 'let mapleader = ","')],
+    "embed": [("{install}/plugin/leader@comma.vim", 'let mapleader = ","')],
     "symlink": [("{install}", "{bundle}")],
   },
 
