@@ -7,7 +7,7 @@ Copyright (C) 2014 Christian Stigen Larsen
 Distributed under the LGPL v2.1; see LICENSE.txt
 """
 
-__version__ = "0.4.5"
+__version__ = "0.4.6"
 
 # Associates short script names with specific versions.
 ALIASES = {
@@ -345,6 +345,27 @@ let g:airline_symbols.linenr = '⭡'
     "about": "Toggle display of linenumbers by mapping :set invnumber to <C-n>",
     "embed": [("{install}/plugin/invnumber@ctrl-n.vim",
                "nmap <C-n> :set invnumber<Cr>")],
+    "symlink": [("{install}", "{bundle}")],
+  },
+
+  "colorcolumn": {
+    "author": "Christian Stigen Larsen",
+    "about": "Shows a vertical line at the 81th column",
+    "embed": [("{install}/plugin/colorcolumn.vim",
+               """" Show a vertical line at the 81th column
+set colorcolumn=81
+highlight ColorColumn ctermbg=234
+""")],
+    "symlink": [("{install}", "{bundle}")],
+  },
+
+  "nohlsearch@ctrl-o": {
+    "author": "Christian Stigen Larsen",
+    "about": "Maps :nohlsearch to <C-o>",
+    "embed": [("{install}/plugin/nohlsearch@ctrl-o.vim",
+               """" Turns off search highlighting with <C-o>
+nmap <silent> <C-o> :nohlsearch<Cr>
+""")],
     "symlink": [("{install}", "{bundle}")],
   },
 
