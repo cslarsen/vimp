@@ -29,6 +29,7 @@ ALIASES = {
   "syntastic": "syntastic-3.4.0",
   "taglist": "taglist-4.6",
   "undotree": "undotree-4.3",
+  "nerdcommenter": "nerdcommenter-2.3.0",
 }
 
 # Known add-ons that can be installed by vimp
@@ -42,6 +43,20 @@ SCRIPTS = {
     "extract":  [ ("vim-pathogen-2.3/autoload/pathogen.vim", "{install}/autoload/pathogen.vim") ],
     "symlink":  [ ("{install}/autoload/pathogen.vim", "{vim}/autoload/pathogen.vim") ],
     "vimrc":    ["execute pathogen#infect()"],
+  },
+
+  "nerdcommenter-2.3.0": {
+    "author": "Marty Grenfell",
+    "about": "Allows for easy commenting of code for many filetypes",
+    "keywords": ["comment"],
+    "download": ("http://www.vim.org/scripts/download_script.php?src_id=14455",
+                 "{name}.zip"),
+    "extract": [ ("doc/NERD_commenter.txt", "{install}/doc/NERD_commenter.txt"),
+                 ("plugin/NERD_commenter.vim",
+                  "{install}/plugin/NERD_commenter.vim") ],
+    "symlink": [ ("{install}", "{bundle}") ],
+    "print": ["You can use NERDCommenter by typing <leader>cc and <leader>cu",
+              "which will comment and uncomment a line, respectively."]
   },
 
   "l9-1.1": {
