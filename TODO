@@ -1,11 +1,11 @@
 Prioritized
-a. Fix configure/SCRIPTS_VER to use tuple of ints, or else 0.1.10 < 0.1.2
-0. disable-enable redownloads, fix.
-1. check installed-folder first when listing installs
-2. enable to add/delete from vimprc
-3. for vimprc-stuff, add symlink from vim/bundle/vimp
-4. when symlinking, make sure we don't overwrite any existing bundles
-5. if a depends on b and we delete b, then a can't work and we should
+- use dulwich to extract git projects, update git projs
+- disable-enable redownloads, fix.
+- check installed-folder first when listing installs
+- enable to add/delete from vimprc
+- for vimprc-stuff, add symlink from vim/bundle/vimp
+- when symlinking, make sure we don't overwrite any existing bundles
+- if a depends on b and we delete b, then a can't work and we should
    delete (or ask or notify) that a will not work any more.
 
 Misc

@@ -92,7 +92,8 @@ def configure():
         link_vimrc_to_vimp()
 
     # Update scripts repository if needed
+    as_tuple = lambda s: tuple(map(int, s.split(".")))
     (rver, rscr) = read_repo()
-    if (rver is None) or (SCRIPTS_VER > rver):
+    if (rver is None) or (as_tuple(SCRIPTS_VER) > as_tuple(rver)):
         write_repo((SCRIPTS_VER, SCRIPTS))
 
