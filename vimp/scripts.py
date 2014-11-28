@@ -7,7 +7,7 @@ Copyright (C) 2014 Christian Stigen Larsen
 Distributed under the LGPL v2.1; see LICENSE.txt
 """
 
-__version__ = "0.4.4"
+__version__ = "0.4.5"
 
 # Associates short script names with specific versions.
 ALIASES = {
@@ -337,6 +337,14 @@ let g:airline_symbols.linenr = '⭡'
     "deps": ["taglist"],
     "embed": [("{install}/plugin/taglist@ctrl-a/taglist@ctrl-a.vim",
                "nmap <silent> <C-a> :TlistToggle<Cr>")],
+    "symlink": [("{install}", "{bundle}")],
+  },
+
+  "invnumber@ctrl-n": {
+    "author": "Christian Stigen Larsen",
+    "about": "Toggle display of linenumbers by mapping :set invnumber to <C-n>",
+    "embed": [("{install}/plugin/invnumber@ctrl-n.vim",
+               "nmap <C-n> :set invnumber<Cr>")],
     "symlink": [("{install}", "{bundle}")],
   },
 
