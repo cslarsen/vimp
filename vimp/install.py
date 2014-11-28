@@ -95,35 +95,22 @@ def getpath(label, name=""):
     vimrc = os.path.expanduser(joinpath("~", ".vimrc"))
     vim = os.path.expanduser(joinpath("~", ".vim"))
 
-    if label == "vim":
-        return vim
+    def unknown_label():
+        print("Error: Unknown path label: %s" % label)
+        sys.exit(1)
 
-    if label == "list":
-        return joinpath(vimp, "list")
-
-    if label == "vimrc":
-        return vimrc
-
-    if label == "vimp":
-        return vimp
-
-    if label == "vimprc":
-        return joinpath(vimp, "vimrc")
-
-    if label == "install":
-        return joinpath(vimp, "installed", full)
-
-    if label == "bundle":
-        return joinpath(vim, "bundle", get_short_name(name))
-
-    if label == "download":
-        return joinpath(vimp, "download", full)
-
-    if label == "colors":
-        return joinpath(vim, "colors")
-
-    print("Error: Unknown path label: %s" % label)
-    sys.exit(1)
+    # Poor man's switch-statement (I don't like long if-elif blocks, sorry!)
+    return {
+        "vim":      lambda: vim,
+        "list":     lambda: joinpath(vimp, "list"),
+        "vimrc":    lambda: vimrc,
+        "vimp":     lambda: vimp,
+        "vimprc":   lambda: joinpath(vimp, "vimrc"),
+        "install":  lambda: joinpath(vimp, "installed", full),
+        "bundle":   lambda: joinpath(vim, "bundle", get_short_name(name)),
+        "download": lambda: joinpath(vimp, "download", full),
+        "colors":   lambda: joinpath(vim, "colors"),
+     }.get(label, unknown_label)()
 
 def download(url, filename, skip_existing=True):
     """Stores download in .vimp/downloads/ and returns filename."""
