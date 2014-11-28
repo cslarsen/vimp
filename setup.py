@@ -1,4 +1,12 @@
-from setuptools import setup
+try:
+    from setuptools import setup
+except ImportError:
+    import sys
+    print("You need setuptools to install vimp. This can be done with, e.g.")
+    print("")
+    print("    pip install setuptools")
+    print("")
+    sys.exit(1)
 
 setup(
     name="vimp",
