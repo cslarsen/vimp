@@ -2,7 +2,7 @@ vimp
 ====
 
 Vimp is a simple plugin manager for vim that downloads and installs plugins
-and dependencies.  In short, by typing
+and dependencies, updating helptags along the way.  In short, by typing
 
     $ vimp get undotree@ctrl-u
 
@@ -31,8 +31,8 @@ we'll see).
 More examples
 -------------
 
-Anyway, you can also specify several plugins to install.
-On a *fresh* vim-install, you can do this:
+Anyway, you can also specify several plugins to install.  On a fresh or
+existing vim installation, you can install a lot of stuff by typing:
 
     $ vimp get molokai powerline ctrlp signify nerdtree@ctrl-d \
       undotree@ctrl-u snipmate
