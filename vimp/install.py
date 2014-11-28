@@ -16,7 +16,17 @@ import urllib2
 
 from vimp.log import (verb)
 from vimp.scripts import (SCRIPTS, ALIASES)
-from vimp.util import *
+from vimp.util import (
+    copyfile,
+    exists,
+    joinpath,
+    mkdir,
+    pathname,
+    readlink,
+    symlink,
+    unlinktree,
+)
+
 
 def get_full_name(name):
     return ALIASES[name] if name in ALIASES else name

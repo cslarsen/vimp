@@ -9,8 +9,6 @@ import os
 import shutil
 import sys
 
-from vimp.command import *
-from vimp.install import *
 from vimp.log import verb
 
 def touch(path):

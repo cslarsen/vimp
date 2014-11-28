@@ -8,11 +8,10 @@ Distributed under the LGPL v2.1; see LICENSE.txt
 import os
 import pickle
 
-from vimp.command import *
-from vimp.install import *
+from vimp.install import getpath
 from vimp.log import verb
 from vimp.scripts import (SCRIPTS, __version__ as SCRIPTS_VER)
-from vimp.util import touch
+from vimp.util import (touch, joinpath, mkdir)
 
 VIMRC_INCLUDE = '    exec ":source" . $HOME . "/.vimp/vimrc"'
 
