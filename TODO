@@ -1,3 +1,28 @@
+Plan for git integration
+- able to put https://github.com/.../foo.git in scripts.py
+- vimp get foo:
+  - if foo in scripts.py, proceed as normal
+  - if not
+    - check vim-script.org
+    - consider if we can check vim.org as well
+    - if so, do above in parallell
+    - if found, add to local cache (not scripts.py) and proceed as normal
+- vimp push
+  - should be anonymous, or require explicit user acceptance to send a vimp
+    pull req for local scripts that are not in scripts.py
+  - users can then easily help adding to vimp scripts.py
+- vimp update
+  - update scripts.py
+  - update each repo with git pull
+  - do this in parallell
+- co-existing various versions
+  - vimp is actually able to support several co-existing different versions
+    - e.g., if foo can require and use bar-1.0 while baz can require and use
+      bar-0.5
+    - however, this places a lot of burden on scripts.py maintenance
+    - consider dropping support, or see if this can be done in an easier way
+- see if we can make scripts.py format simpler
+
 Prioritized
 - use dulwich to extract git projects, update git projs
 - disable-enable redownloads, fix.
