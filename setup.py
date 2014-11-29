@@ -21,5 +21,5 @@ setup(
     description="Command-line package manager or vim.",
     long_description=open("README.md").read(),
     zip_safe=True,
-    install_requires=["dulwich>=0.9.7"],
+    install_requires=["gittle>=0.3.0"],
 )
