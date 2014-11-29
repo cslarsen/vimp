@@ -22,6 +22,7 @@ Plan for git integration
     - however, this places a lot of burden on scripts.py maintenance
     - consider dropping support, or see if this can be done in an easier way
 - see if we can make scripts.py format simpler
+- consider making vimp interface for vim through python
 
 Prioritized
 - use dulwich to extract git projects, update git projs
