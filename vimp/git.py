@@ -1,12 +1,15 @@
 import os
 from gittle import Gittle
 
+from vimp.log import (verb)
+
 def clone(url, path):
     """Clone a git repository from URL into local path.
 
     Returns:
         A Gittle repository.
     """
+    verb("Cloning git repo repo %s to %s" % (url, path))
     return Gittle.clone(url, path)
 
 def pull(path):
@@ -15,6 +18,7 @@ def pull(path):
     Returns:
         A Gittle repository.
     """
+    verb("Pulling git repo at %s" % path)
     repo = Gittle(path)
     repo.pull(origin_uri=repo.remotes["origin"])
     return repo
