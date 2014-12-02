@@ -14,6 +14,7 @@ import tarfile
 import threading
 import urllib2
 
+import vimp.git as git
 from vimp.log import (verb)
 from vimp.scripts import (SCRIPTS, ALIASES)
 from vimp.util import (
@@ -277,6 +278,12 @@ def install_script(name, script):
       return out
 
   archive = None
+
+  if "git" in script:
+    url = script["git"]
+    path = getpath("install", name)
+    if not exists(path):
+        git.clone_or_pull(url, path)
 
   if "download" in script:
     url, archive = script["download"]

@@ -7,7 +7,7 @@ Copyright (C) 2014 Christian Stigen Larsen
 Distributed under the LGPL v2.1; see LICENSE.txt
 """
 
-__version__ = "0.4.8"
+__version__ = "0.4.9"
 
 # Associates short script names with specific versions.
 ALIASES = {
@@ -29,7 +29,6 @@ ALIASES = {
   "syntastic": "syntastic-3.4.0",
   "taglist": "taglist-4.6",
   "undotree": "undotree-4.3",
-  "nerdcommenter": "nerdcommenter-2.3.0",
 }
 
 # Known add-ons that can be installed by vimp
@@ -45,15 +44,11 @@ SCRIPTS = {
     "vimrc":    ["execute pathogen#infect()"],
   },
 
-  "nerdcommenter-2.3.0": {
+  "nerdcommenter": {
     "author": "Marty Grenfell",
     "about": "Allows for easy commenting of code for many filetypes",
     "keywords": ["comment"],
-    "download": ("http://www.vim.org/scripts/download_script.php?src_id=14455",
-                 "{name}.zip"),
-    "extract": [ ("doc/NERD_commenter.txt", "{install}/doc/NERD_commenter.txt"),
-                 ("plugin/NERD_commenter.vim",
-                  "{install}/plugin/NERD_commenter.vim") ],
+    "git": "https://github.com/scrooloose/nerdcommenter.git",
     "symlink": [ ("{install}", "{bundle}") ],
     "print": ["You can use NERDCommenter by typing <leader>cc and <leader>cu",
               "which will comment and uncomment a line, respectively."]
