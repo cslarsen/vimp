@@ -10,7 +10,7 @@ except ImportError:
 
 setup(
     name="vimp",
-    version="0.0.1",
+    version="0.0.2",
     author="Christian Stigen Larsen",
     author_email="csl@csl.name",
     keywords="vim",
