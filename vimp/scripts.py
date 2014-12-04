@@ -7,19 +7,21 @@ Copyright (C) 2014 Christian Stigen Larsen
 Distributed under the LGPL v2.1; see LICENSE.txt
 """
 
-__version__ = "0.4.8"
+__version__ = "0.4.9"
 
 # Associates short script names with specific versions.
 ALIASES = {
   "airline": "airline-0.6",
   "corporati": "corporati-1.0",
   "ctrlp": "ctrlp-1.79",
+  "dispatch": "vim-dispatch-1.2",
   "easymotion": "easymotion-2.0",
   "fugitive": "fugitive-1.2",
   "fuzzyfinder": "fuzzyfinder-4.2.2",
   "guardian": "guardian-1.2",
   "l9": "l9-1.1",
   "matchit": "matchit-1.13.2",
+  "nerdcommenter": "nerdcommenter-2.3.0",
   "nerdtree": "nerdtree-4.2.0",
   "pathogen": "pathogen-2.3",
   "powerline": "powerline-7.2",
@@ -29,7 +31,7 @@ ALIASES = {
   "syntastic": "syntastic-3.4.0",
   "taglist": "taglist-4.6",
   "undotree": "undotree-4.3",
-  "nerdcommenter": "nerdcommenter-2.3.0",
+  "vim-dispatch": "vim-dispatch-1.2",
 }
 
 # Known add-ons that can be installed by vimp
@@ -43,6 +45,32 @@ SCRIPTS = {
     "extract":  [ ("vim-pathogen-2.3/autoload/pathogen.vim", "{install}/autoload/pathogen.vim") ],
     "symlink":  [ ("{install}/autoload/pathogen.vim", "{vim}/autoload/pathogen.vim") ],
     "vimrc":    ["execute pathogen#infect()"],
+  },
+
+  "vim-dispatch-1.2": {
+    "author": "Tim Pope",
+    "about": "Asynchronous build and test dispatcher",
+    "keywords": ["dispatch", "make", "background"],
+    "download": ("https://github.com/tpope/vim-dispatch/archive/v1.2.tar.gz",
+                 "{name}.tar.gz"),
+    "extract": [ ("vim-dispatch-1.2/autoload/dispatch.vim",
+                    "{install}/autoload/dispatch.vim"),
+                 ("vim-dispatch-1.2/autoload/dispatch/headless.vim",
+                     "{install}/autoload/dispatch/headless.vim"),
+                 ("vim-dispatch-1.2/autoload/dispatch/iterm.vim",
+                     "{install}/autoload/dispatch/iterm.vim"),
+                 ("vim-dispatch-1.2/autoload/dispatch/screen.vim",
+                     "{install}/autoload/dispatch/screen.vim"),
+                 ("vim-dispatch-1.2/autoload/dispatch/tmux.vim",
+                     "{install}/autoload/dispatch/tmux.vim"),
+                 ("vim-dispatch-1.2/autoload/dispatch/windows.vim",
+                     "{install}/autoload/dispatch/windows.vim"),
+                 ("vim-dispatch-1.2/autoload/dispatch/x11.vim",
+                     "{install}/autoload/dispatch/x11.vim"),
+                 ("vim-dispatch-1.2/doc/dispatch.txt", "{install}/doc/dispatch.txt"),
+                 ("vim-dispatch-1.2/plugin/dispatch.vim", "{install}/plugin/dispatch.vim")
+                ],
+    "symlink":  [ ("{install}", "{bundle}") ],
   },
 
   "nerdcommenter-2.3.0": {
