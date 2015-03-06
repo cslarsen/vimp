@@ -9,9 +9,9 @@ typing
 
     $ vimp get undotree@ctrl-u
 
-vimp will download undotree, install it in vim and map it to CTRL-U
-(``<C-U>``). If you decide you don't want undotree anymore (or just want
-to disable the mapping on ctrl-u), type
+vimp will download undotree, install it in vim and map it to CTRL-u
+(``<C-u>``). If you decide you don't want undotree anymore (or just want
+to disable the keyboard mapping), type
 
 ::
 
