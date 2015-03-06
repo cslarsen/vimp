@@ -1,24 +1,22 @@
 try:
     from setuptools import setup
 except ImportError:
-    import sys
-    print("You need setuptools to install vimp. This can be done with, e.g.")
-    print("")
-    print("    pip install setuptools")
-    print("")
-    sys.exit(1)
+    from distutils.core import setup
 
 setup(
     name="vimp",
-    version="0.0.1",
+    packages=["vimp"],
+    version="0.1.0",
     author="Christian Stigen Larsen",
     author_email="csl@csl.name",
-    keywords="vim",
-    packages=["vimp", "vimp.test"],
+    keywords=["vim"],
     scripts=["bin/vimp"],
     url="https://github.com/cslarsen/vimp",
-    license="LICENSE.txt",
+    download_url="https://github.com/cslarsen/vimp/tarball/0.1.0",
+    license="https://www.gnu.org/licenses/lgpl-2.1.html",
     description="Command-line package manager or vim.",
-    long_description=open("README.md").read(),
+    long_description=open("README.rst").read(),
     zip_safe=True,
+    test_suite="vimp.test",
+    platforms=["unix"],
 )
