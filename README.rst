@@ -17,6 +17,19 @@ to disable the mapping on ctrl-u), type
 
     $ vimp disable undotree@ctrl-u
 
+Installing
+----------
+
+The latest stable release is on PyPI::
+
+    $ pip install vimp
+
+You can also clone the repository and install that::
+
+    $ git clone https://github.com/cslarsen/vimp.git
+    $ cd vimp
+    $ python setup.py install
+
 Warning
 -------
 
@@ -136,22 +149,6 @@ Requirements
 
 You need Python and vim, of course. It relies on Pathogen, but will
 install this by default if it can't find it.
-
-Installation
-------------
-
-I haven't made any installer yet, so you have to clone this project and
-add the vimp path to ``$PATH``. On my system, I've added ``~/bin`` to my
-``$PATH``, so I just symlink ``~/bin/vimp`` to ``~/devel/vimp/vimp``:
-
-::
-
-    $ git clone https://github.com/cslarsen/vimp
-    $ cd vimp
-    $ python setup.py install
-
-Later, when vimp is more mature, I'll make it possible to install via
-``pip``.
 
 Adding new plugins / installations scripts to vimp
 --------------------------------------------------
