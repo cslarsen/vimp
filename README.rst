@@ -17,6 +17,14 @@ to disable the mapping on ctrl-u), type
 
     $ vimp disable undotree@ctrl-u
 
+If you specify several plugins, it will download all of them, including
+dependencies, them all, *in parallel*::
+
+    $ vimp get molokai powerline ctrlp signify nerdtree@ctrl-d \
+      undotree@ctrl-u snipmate
+
+To see what you have installed, simply type ``vimp ls``.
+
 Installing
 ----------
 
@@ -59,10 +67,12 @@ existing vim installation, you can install a lot of stuff by typing:
       undotree@ctrl-u snipmate
 
 This will download all the plugins above and their dependencies, and
-will do so *in parallel*. It will also map NerdTree to and UndoTree to .
-As this is a fresh vim install, it will install Pathogen also (note: it
-does *not* enable vim plugins for you, but this is something it probably
-should in a future version).
+will do so *in parallel*. It will also map NerdTree to CTRL-d and UndoTree to
+CTRL-u.
+
+If you do this on a fresh vim install, it will install Pathogen also (note: it
+does *not* enable vim plugins for you, but this is something it probably should
+in a future version).
 
 In the above example, it will also change the current color scheme to
 Molokai. To switch from Molokai to the grb256 color scheme, just type:
