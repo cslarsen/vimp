@@ -1,5 +1,8 @@
-check:
+lint:
 	find . -name '*.py' -print0 | parallel -0 pyflakes
+
+check:
+	python setup.py test
 
 clean:
 	find . -name '*.pyc' | xargs rm -f
