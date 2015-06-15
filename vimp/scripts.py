@@ -583,6 +583,14 @@ and of course `:help fugitive`.
     "symlink": [ ("{install}", "{bundle}") ],
   },
 
+  "fastfind": {
+      "author": "Stian Lode",
+      "about": "Fast C++ parallel text search and header/source switcher",
+      "download": ("https://gist.githubusercontent.com/slode/7a161070318c5f0220db/raw/6ab4d8e6ec157066dbd28a516e8c1c739ab33ac0/fast_find.vim", "{name}.vim"),
+      "copy": [ ("{download}/{name}.vim", "{install}/plugin/{name}.vim") ],
+      "symlink": [("{install}", "{bundle}")],
+  },
+
   "snipmate-0.83": {
     "author": "Michael Sanders",
     "about": "Tab-completion for boilerplate code.",
