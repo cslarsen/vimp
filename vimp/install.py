@@ -12,7 +12,11 @@ import shutil
 import sys
 import tarfile
 import threading
-import urllib2
+
+try:
+    import urllib2
+except ImportError:
+    import urllib
 
 from vimp.log import (verb)
 from vimp.scripts import (SCRIPTS, ALIASES)

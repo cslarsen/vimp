@@ -41,8 +41,9 @@ def vimrc_links_to_vimp():
                 return True
     return False
 
-def write_repo((version, scripts)):
+def write_repo(version_scripts):
     """Writes repository version/script to vimp dir."""
+    version, scripts = version_scripts
     scripts = joinpath(getpath("list"), "scripts")
     with open(scripts, "wb") as f:
         f.write(pickle.dumps((version, scripts), protocol=2))

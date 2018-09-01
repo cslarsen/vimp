@@ -13,8 +13,12 @@ import os
 import pickle
 import shutil
 import sys
-import urllib2
 import zipfile
+
+try:
+    import urllib2
+except ImportError:
+    import urllib
 
 from vimp.command import *
 from vimp.configure import configure
@@ -38,7 +42,7 @@ def dispatch(commands):
     try:
         function = lookup_function(command)
         function(*commands[1:])
-    except TypeError, e:
+    except TypeError as e:
         print("You supplied incorrect arguments to: %s" % command)
         print(e)
         print_help(command)

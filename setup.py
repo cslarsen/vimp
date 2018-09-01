@@ -7,7 +7,7 @@ setup(
     name="vimp",
     description="Command line package manager for the vim editor.",
     packages=["vimp"],
-    version="0.1.2",
+    version="0.1.3",
     author="Christian Stigen Larsen",
     author_email="csl@csl.name",
     keywords=["vim"],
