@@ -13,7 +13,7 @@ setup(
     keywords=["vim"],
     scripts=["bin/vimp"],
     url="https://github.com/cslarsen/vimp",
-    download_url="https://github.com/cslarsen/vimp/tarball/0.1.2",
+    download_url="https://github.com/cslarsen/vimp/tarball/0.1.3",
     license="https://www.gnu.org/licenses/lgpl-2.1.html",
     long_description=open("README.rst").read(),
     zip_safe=True,
